@@ -15,5 +15,8 @@
 //    return view('welcome');
 //});
 
-Route::get('alogin', 'LoginAdminController@getLogin');
+Route::get('alogin', 'LoginAdminController@getLogin')->name('getlogin');
 Route::post('alogin', 'LoginAdminController@postLogin');
+Route::get('test', function() {
+    return view('admin.layout.layout');
+});

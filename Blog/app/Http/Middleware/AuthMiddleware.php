@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class AuthMiddleware
 {
@@ -15,6 +16,10 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if(Auth::check()->level_id != 1)
+        {
+            return redirect()->route('getlogin');
+        }
         return $next($request);
     }
 }
