@@ -21,6 +21,8 @@ abstract class MenuReporitory extends ConfigModel implements IMenuReporitory
             $find->status_show = !$find->status_show;
             $find->save();
         }
+        //$find = $this->model->find($id);
+
     }
 
     abstract function model();

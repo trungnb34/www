@@ -22,7 +22,7 @@
                         <a href="{{ url('admin/menu/list') }}">List Menu</a>
                     </li>
                     <li>
-                        <a href="#">Add Menu</a>
+                        <a href="{{ url('admin/menu/add') }}">Add Menu</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

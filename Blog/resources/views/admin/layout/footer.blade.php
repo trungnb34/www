@@ -19,6 +19,10 @@
 <script src="{{ asset('admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
 
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+
+{{--Slideup for errorlog--}}
+<script src="{{ asset('admin/script/js.js') }}"></script>
+
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({

@@ -35,4 +35,12 @@ class Reporitorys implements ReporitoryInterface
             return $this->model->destroy($id);
         }
     }
+
+    public function find($id)
+    {
+        if($find = $this->model->find($id))
+        {
+            return $this->model->find($id);
+        }
+    }
 }

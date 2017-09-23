@@ -27,7 +27,7 @@
     <link href="{{ asset('admin/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
 
     {{-- css for button create_new--}}
-    <link rel="stylesheet" href="{{ asset('admin/') }}">
+    <link rel="stylesheet" href="{{ asset('admin/style/css.css') }}">
 </head>
 
 <body>

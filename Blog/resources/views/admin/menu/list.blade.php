@@ -7,7 +7,7 @@
                     <small>List</small>
                 </h1>
             </div>
-            <a href="#" class="btn btn-primary" id="create_new">Thêm mới</a>
+            <a href="{{ url('admin/menu/add') }}" class="btn btn-primary" id="create_new">Thêm mới</a>
             <!-- /.col-lg-12 -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
@@ -41,7 +41,7 @@
                                 @endif
                             </a>
                         </td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ url('admin/menu/edit') }}/{{ $item->id }}">Edit</a></td>
                     </tr>
                 @endforeach
                 </tbody>

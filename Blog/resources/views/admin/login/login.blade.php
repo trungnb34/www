@@ -33,6 +33,20 @@
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
                 <div class="panel-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger" id="errorLog">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if(Session::has('errorLogin'))
+                        <div class="alert alert-danger" id="errorLog">
+                            {{ Session::get('errorLogin') }}
+                        </div>
+                    @endif
                     <form role="form" action="" method="POST">
                         {{ csrf_field() }}
                         <fieldset>
@@ -62,6 +76,16 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ asset('admin/dist/js/sb-admin-2.js') }}"></script>
+
+{{--<scripit src="{{ asset('admin/script/js.js') }}"></scripit>--}}
+
+<script>
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('#errorLog').slideUp();
+        }, 3000);
+    })
+</script>
 
 </body>
 

@@ -23,10 +23,15 @@ Route::middleware(['AuthLogin'])->group(function () {
     Route::prefix('admin')->group(function () {
 
         Route::get('home', 'Admin\HomeAdminController@home')->name('homeadmin');
+        Route::get('ex404', 'Admin\ExceptionController@get404')->name('ex404');
 
         Route::prefix('menu')->group(function () {
             Route::get('list', 'Admin\MenuAdminController@index')->name('listmenu');
             Route::get('change/{id}', 'Admin\MenuAdminController@change');
+            Route::get('add', 'Admin\MenuAdminController@getAdd')->name('getadd');
+            Route::post('add', 'Admin\MenuAdminController@postAdd');
+            Route::get('edit/{id}', 'Admin\MenuAdminController@getEdit');
+            Route::post('edit/{id}', 'Admin\MenuAdminController@postEdit');
         });
     });
 });
