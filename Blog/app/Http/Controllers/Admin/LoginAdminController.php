@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginAdminRequest;
+use Illuminate\Support\Facades\Auth;
 
 class LoginAdminController extends Controller
 {
@@ -11,9 +13,15 @@ class LoginAdminController extends Controller
     {
         if(Auth::check())
         {
-            //return view();
+            return redirect()->route('homeadmin');
         }
         return view('admin.login.login');
+    }
+
+    public function logOut()
+    {
+        Auth::logout();
+        return redirect()->route('getlogin');
     }
 
     public function postLogin(LoginAdminRequest $request)
@@ -25,7 +33,7 @@ class LoginAdminController extends Controller
         if (Auth::attempt($login))
         {
             // Authentication passed...
-            return redirect()->route('');
+            return redirect()->route('homeadmin');
         }
         else
         {

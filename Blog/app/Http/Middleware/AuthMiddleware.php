@@ -16,10 +16,10 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()->level_id != 1)
+        if(Auth::check() && Auth::user()->level_id == 1)
         {
-            return redirect()->route('getlogin');
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('getlogin');
     }
 }

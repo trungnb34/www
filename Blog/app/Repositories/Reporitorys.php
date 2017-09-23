@@ -10,7 +10,7 @@ class Reporitorys implements ReporitoryInterface
         return $this->model->get($columns);
     }
 
-    public function paginate($perPage = 15, $columns = array('*'))
+    public function paginate($perPage = 20, $columns = array('*'))
     {
         return $this->model->paginate($perPage, $columns);
     }

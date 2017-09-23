@@ -11,6 +11,6 @@ class FeedBackSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\FeedBack::class, 2)->create();
+        factory(App\Models\FeedBack::class, 20)->create();
     }
 }

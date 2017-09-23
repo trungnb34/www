@@ -15,8 +15,18 @@
 //    return view('welcome');
 //});
 
-Route::get('alogin', 'LoginAdminController@getLogin')->name('getlogin');
-Route::post('alogin', 'LoginAdminController@postLogin');
-Route::get('test', function() {
-    return view('admin.layout.layout');
+Route::get('alogin', 'Admin\LoginAdminController@getLogin')->name('getlogin');
+Route::post('alogin', 'Admin\LoginAdminController@postLogin');
+Route::get('alogout', 'Admin\LoginAdminController@logOut');
+
+Route::middleware(['AuthLogin'])->group(function () {
+    Route::prefix('admin')->group(function () {
+
+        Route::get('home', 'Admin\HomeAdminController@home')->name('homeadmin');
+
+        Route::prefix('menu')->group(function () {
+            Route::get('list', 'Admin\MenuAdminController@index')->name('listmenu');
+            Route::get('change/{id}', 'Admin\MenuAdminController@change');
+        });
+    });
 });

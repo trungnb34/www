@@ -24,7 +24,8 @@ class ReporitoryPorovider extends ServiceProvider
     public function register()
     {
         $binds = [
-            'App\Repositories\ReporitoryInterface' => 'App\Repositories\ReporitoryObject\Menu',
+            //'App\Repositories\ReporitoryInterface' => 'App\Repositories\ReporitoryObject\Menu',
+            'App\Repositories\Contracts\IMenuReporitory' => 'App\Repositories\ReporitoryObject\Menu',
         ];
 
         foreach($binds as $keys => $value)

@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\FeedBack::class, function (Faker $faker) {
+$factory->define(App\Models\FeedBack::class, function (Faker $faker) {
     return [
         'user_id' => rand(1, 6005),
         'date_time' => $faker->dateTime,

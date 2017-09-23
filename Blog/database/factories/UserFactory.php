@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(App\Models\User::class, function (Faker $faker) {
     static $password;
     
         return [
@@ -26,6 +26,6 @@ $factory->define(App\User::class, function (Faker $faker) {
             'token_datetime' => $faker->dateTime,
             'password' => $password ?: $password = bcrypt('secret'),
             'token' => bcrypt($faker->word),
-            //'remember_token' => str_random(10),
+            'remember_token' => str_random(10),
         ];
 });

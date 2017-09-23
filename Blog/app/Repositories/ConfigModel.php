@@ -16,12 +16,7 @@ class ConfigModel extends Reporitorys
  
         if (!$model instanceof Model)
         {
-            //echo "không là model"; die();
             //throw new ReporitoryExceptions("Class {$this->model()} must be an instance of Illuminate\\Database\\Eloquent\\Model");
-        }
-        else
-        {
-            //echo "là model "; die();
         }
         return $this->model = $model;
     }

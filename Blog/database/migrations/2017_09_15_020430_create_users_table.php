@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name', 20);
             $table->string('avatar');
             $table->dateTime('token_datetime');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

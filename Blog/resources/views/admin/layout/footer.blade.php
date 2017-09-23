@@ -1,3 +1,7 @@
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
 <!-- jQuery -->
 <script src="{{ asset('admin/bower_components/jquery/dist/jquery.min.js') }}"></script>
 
