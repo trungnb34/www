@@ -17,9 +17,8 @@ class CreateCategorysTable extends Migration
             $table->increments('id');
             $table->string('category_name');
             $table->integer('parent_id')->lenght(11)->unsigned();
-            $table->foreign('parent_id')->references('id')->on('categorys');
             $table->string('slug', 50);
-            $table->dateTime('timeDelete');
+            $table->dateTime('timeDelete')->nullable();
             $table->integer('menu_id')->length(11)->unsigned();
             $table->foreign('menu_id')->references('id')->on('menu');
             $table->timestamps();

@@ -23,6 +23,10 @@
 {{--Slideup for errorlog--}}
 <script src="{{ asset('admin/script/js.js') }}"></script>
 
+{{--<script srec="{{ asset('admin/dist/js/bootstrap-select.min.js') }}"></script>--}}
+
+@yield('javascript')
+
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -30,6 +34,26 @@
         });
     });
 </script>
+{{--<script>--}}
+    {{--$(document).ready(function () {--}}
+        {{--var mySelect = $('#first-disabled2');--}}
+
+        {{--$('#special').on('click', function () {--}}
+            {{--mySelect.find('option:selected').prop('disabled', true);--}}
+            {{--mySelect.selectpicker('refresh');--}}
+        {{--});--}}
+
+        {{--$('#special2').on('click', function () {--}}
+            {{--mySelect.find('option:disabled').prop('disabled', false);--}}
+            {{--mySelect.selectpicker('refresh');--}}
+        {{--});--}}
+
+        {{--$('#basic2').selectpicker({--}}
+            {{--liveSearch: true,--}}
+            {{--maxOptions: 1--}}
+        {{--});--}}
+    {{--});--}}
+{{--</script>--}}
 </body>
 
 </html>

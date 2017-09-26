@@ -14,4 +14,6 @@ interface ReporitoryInterface
     public function delete($id);
 
     public function find($id);
+
+    //public function changeStatus($id, $attribute, $value);
 }

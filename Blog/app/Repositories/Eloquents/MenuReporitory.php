@@ -14,15 +14,13 @@ abstract class MenuReporitory extends ConfigModel implements IMenuReporitory
         $this->makeModel();
     }
 
-    public function changeStatus($id)
+    public function changeStatusMenu($id)
     {
         if($find = $this->model->find($id))
         {
             $find->status_show = !$find->status_show;
             $find->save();
         }
-        //$find = $this->model->find($id);
-
     }
 
     abstract function model();

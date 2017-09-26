@@ -5,5 +5,5 @@ use App\Repositories\ReporitoryInterface;
 
 interface IMenuReporitory extends ReporitoryInterface
 {
-    public function changeStatus($id);
+    public function changeStatusMenu($id);
 }

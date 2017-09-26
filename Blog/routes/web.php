@@ -33,5 +33,15 @@ Route::middleware(['AuthLogin'])->group(function () {
             Route::get('edit/{id}', 'Admin\MenuAdminController@getEdit');
             Route::post('edit/{id}', 'Admin\MenuAdminController@postEdit');
         });
+
+        Route::prefix('category')->group(function () {
+            Route::get('list', 'Admin\CategoryAdminController@index')->name('listcate');
+            Route::get('change/{id}', 'Admin\CategoryAdminController@change');
+            Route::get('add', 'Admin\CategoryAdminController@getAdd')->name('getadd');
+            Route::post('add', 'Admin\CategoryAdminController@postAdd');
+            Route::get('filterByMenu', 'Admin\CategoryAdminController@filterByMenu');
+            Route::get('edit/{id}', 'Admin\CategoryAdminController@getEdit');
+            //Route::post('edit/{id}', 'Admin\MenuAdminController@postEdit');
+        });
     });
 });

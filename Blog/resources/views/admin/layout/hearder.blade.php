@@ -28,6 +28,8 @@
 
     {{-- css for button create_new--}}
     <link rel="stylesheet" href="{{ asset('admin/style/css.css') }}">
+
+    {{--<link rel="stylesheet" href="{{ asset('admin/dist/css/bootstrap-select.min.css') }}">--}}
 </head>
 
 <body>

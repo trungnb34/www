@@ -21,12 +21,12 @@ class MenuAdminController extends Controller
     public function index()
     {
         $data = $this->app->all();
-        return view('admin.menu.list', ['data' => $data]);//->with('data' , $data);
+        return view('admin.menu.list', ['data' => $data]);
     }
 
     public function change($id)
     {
-        $this->app->changeStatus($id);
+        $this->app->changeStatusMenu($id);
         return redirect()->route('listmenu');
     }
 
@@ -62,7 +62,7 @@ class MenuAdminController extends Controller
      */
     public function postEdit(EditMenuAdminRequest $request,$id)
     {
-        if(CheckToEditModel($this->app, $id, $request->name_menu, 'name_menu') && $this->app->find($id))
+        if(checkToEditModel($this->app, $id, $request->name_menu, 'name_menu') && $this->app->find($id))
         {
             $data = [
                 'name_menu'     => $request->name_menu,

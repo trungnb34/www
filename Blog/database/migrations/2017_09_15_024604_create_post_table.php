@@ -20,7 +20,7 @@ class CreatePostTable extends Migration
             $table->string('avatar');
             $table->text('fulltext');
             $table->integer('approval')->length(1);
-            $table->dateTime('time_delete');
+            $table->dateTime('time_delete')->nullable();
             $table->integer('user_id')->lenght(11)->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('category_id')->lenght(11)->unsigned();
