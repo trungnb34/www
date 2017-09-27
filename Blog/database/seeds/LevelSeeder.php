@@ -15,10 +15,12 @@ class LevelSeeder extends Seeder
             [
                 [
                     'level_name' => 'Admin',
+                    'status_show' => 1,
                     'level' => 500,
                 ],
                 [
                     'level_name' => 'Thành viên',
+                    'status_show' => 1,
                     'level' => 10,
                 ]
             ]

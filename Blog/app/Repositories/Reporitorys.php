@@ -43,17 +43,4 @@ class Reporitorys implements ReporitoryInterface
             return $this->model->find($id);
         }
     }
-
-//    public function changeStatus($id, $attribute, $value)
-//    {
-//        if($find = $this->model->find($id))
-//        {
-//            if($find[$attribute] != $value)
-//            {
-//                $find[$attribute] = $value;
-//            }
-//            if($find->save()) return true; return false;
-//        }
-//        return false;
-//    }
 }

@@ -35,6 +35,7 @@ class AddCateAdminRequest extends FormRequest
             'parent_id.required' => 'Chọn tên parent id',
             'menu_id.required'   => 'Chọn menu hiển thị',
             'category_name.required'  => 'Nhập tên category',
+            'category_name.unique'  => 'Tên category đã bị trùng',
         ];
     }
 }

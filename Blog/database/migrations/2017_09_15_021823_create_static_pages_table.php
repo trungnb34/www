@@ -18,6 +18,7 @@ class CreateStaticPagesTable extends Migration
             $table->string('title', 150);
             $table->text('content');
             $table->string('slug', 150);
+            $table->integer('status_show')->length(1);
             $table->timestamps();
         });
     }

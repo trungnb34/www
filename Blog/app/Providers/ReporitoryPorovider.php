@@ -26,7 +26,9 @@ class ReporitoryPorovider extends ServiceProvider
         $binds = [
             //'App\Repositories\ReporitoryInterface' => 'App\Repositories\ReporitoryObject\Menu',
             'App\Repositories\Contracts\IMenuReporitory' => 'App\Repositories\ReporitoryObject\Menu',
-            'App\Repositories\Contracts\ICategoryReporitory' => 'App\Repositories\ReporitoryObject\Category'
+            'App\Repositories\Contracts\ICategoryReporitory' => 'App\Repositories\ReporitoryObject\Category',
+            'App\Repositories\Contracts\ILevelReporitory' => 'App\Repositories\ReporitoryObject\Level',
+            'App\Repositories\Contracts\IStaticPageReporitory' => 'App\Repositories\ReporitoryObject\StaticPages',
         ];
 
         foreach($binds as $keys => $value)

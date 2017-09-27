@@ -15,5 +15,5 @@ interface ReporitoryInterface
 
     public function find($id);
 
-    //public function changeStatus($id, $attribute, $value);
+    //public function changeStatus($id, $attribute = "status_show");
 }

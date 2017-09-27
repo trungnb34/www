@@ -40,6 +40,30 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="#"><i class="fa fa-level-up" aria-hidden="true"></i> Level<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('admin/level/list') }}">List Level</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/level/add') }}">Add Level</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-desktop" aria-hidden="true"></i> Static Pages<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('admin/staticpages/list') }}">List Static Pages</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/staticpages/add') }}">Add Static Pages</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

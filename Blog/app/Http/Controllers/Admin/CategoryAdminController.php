@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Repositories\Contracts\ICategoryReporitory;
 use App\Repositories\Contracts\IMenuReporitory;
 use App\Http\Requests\AddCateAdminRequest;
+use App\Http\Requests\EditCateAdminRequest;
+
 
 class CategoryAdminController extends Controller
 {
@@ -82,8 +84,31 @@ class CategoryAdminController extends Controller
         {
             $menus = $this->menu->all();
             $cates = $this->cate->all();
-            return view('admin.category.edit', ['cateFinds' => $find, 'cates' => $cates, 'menus' => $menus]);
+            //dd($find->toArray());
+            return view('admin.category.edit', ['cateFind' => $find, 'cates' => $cates, 'menus' => $menus]);
         }
         return redirect()->route('ex404');
     }
+
+    public function postEdit($id, EditCateAdminRequest $request)
+    {
+        if(checkToEditModel($this->cate, $id, $request->category_name, 'category_name'))
+        {
+            $data = [
+                'category_name' => $request->category_name,
+                'parent_id'     => $request->parent_id,
+                'slug'          => stripUnicode($request->category_name),
+                'menu_id'       => $request->menu_id,
+            ];
+            if($this->cate->update($data, $id))
+            {
+                return redirect()->route('listcate')->with('log', 'Bạn đã sửa thành công');
+            }
+        }
+        else
+        {
+            echo "éo có được";
+        }
+    }
+
 }

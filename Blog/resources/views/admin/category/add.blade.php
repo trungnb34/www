@@ -8,8 +8,17 @@
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
-            <div class="col-lg-7" style="padding-bottom:120px" id="from-add-cate">
-                <form action="" method="POST">
+            <div class="col-lg-7" style="padding-bottom:120px">
+                @if ($errors->any())
+                    <div class="alert alert-danger" id="errorLog">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form action="" method="POST" id="from-add-cate">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Category Parent</label>
@@ -42,5 +51,4 @@
 
 @section('javascript')
     <script src="{{ asset('admin/script/addCate.js') }}"></script>
-
 @endsection

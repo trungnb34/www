@@ -26,8 +26,11 @@ class MenuAdminController extends Controller
 
     public function change($id)
     {
-        $this->app->changeStatusMenu($id);
-        return redirect()->route('listmenu');
+        if($this->app->changeStatusMenu($id))
+        {
+            return redirect()->route('listmenu');
+        }
+        return redirect()->route('ex404');
     }
 
     public function getAdd()
