@@ -22,20 +22,20 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label>Tên tiêu đề</label>
-                        <textarea class="form-control" rows="3" name="title" placeholder="Please Enter Title" >{{ old('title') }}</textarea>
+                        <textarea class="form-control" rows="3" name="title" placeholder="Please Enter Title" >{{ $findStatic->title }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Nội dung</label>
-                        <textarea id="contentText" name="contentText"></textarea>
+                        <textarea id="staticpage" name="contentText">{{ $findStatic->content }}</textarea>
                     </div>
                     <div class="form-group">
                         <label>Trạng thái hiển thị</label>
                         <div>
-                            <label class="radio-inline"><input type="radio" name="status_show" value="1" checked>Hiển thị</label>
-                            <label class="radio-inline"><input type="radio" name="status_show" value="0">Ẩn</label>
+                            <label class="radio-inline"><input {{ $findStatic->status_show == 1 ? 'checked' : '' }} type="radio" name="status_show" value="1">Hiển thị</label>
+                            <label class="radio-inline"><input {{ $findStatic->status_show == 0 ? 'checked' : '' }} type="radio" name="status_show" value="0">Ẩn</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Thêm</button>
+                    <button type="submit" class="btn btn-default">Sửa</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

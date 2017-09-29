@@ -22,7 +22,7 @@
                 <tbody>
                 <?php $stt = 1;?>
                 @foreach($data as $item)
-                    <tr class="odd gradeX" align="center">
+                    <tr class="odd gradeX changecolor" align="center" data-status_show="{{ $item->status_show }}" >
                         <td>{{ $stt++ }}</td>
                         <td>{{ $item->name_menu }}</td>
                         <td>
@@ -50,4 +50,8 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('admin/script/changecolor.js') }}"></script>
 @endsection

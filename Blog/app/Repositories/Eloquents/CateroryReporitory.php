@@ -27,31 +27,40 @@ abstract class CateroryReporitory extends ConfigModel implements ICategoryRepori
         {
             if($find->timeDelete == null)
             {
-                // kiểm tra xem category có là parent_id của category khác đang hiển thị không
-                $cateParentIds = $this->model->select('parent_id', 'timeDelete');
-                foreach ($cateParentIds as $cateParentId)
+                $find->timeDelete = date('Y-m-d H:i:s');
+                $cates = $this->model->get();
+                foreach ($cates as $cate)
                 {
-                    if($cateParentId['parent_id'] == $id && $cateParentId['timeDelete'] == null)
+                    if($cate->parent_id == $id)
                     {
-                        return 0; // trả về 0 là cate có cate con vẫn hiển thị
+                        $cate->timeDelete = date('Y-m-d H:i:s');
+                        $cate->save();
                     }
                 }
-                $find->timeDelete = date('Y-m-d H:i:s');
             }
             else
             {
                 $find->timeDelete = null;
+                $cates = $this->model->get();
+                foreach ($cates as $cate)
+                {
+                    if($find->parent_id == $cate->id &&  $cate->timeDelete != null)
+                    {
+                        return false;
+                    }
+
+                    if($cate->parent_id == $id)
+                    {
+                        //if($find->parent_id == $cate->id)
+                        $cate->timeDelete = null;
+                        $cate->save();
+                    }
+                }
             }
-            if($find->save())
-            {
-                return 1; // return 1 mean success when save data
-            }
-            else
-            {
-                return 2; // return 1 mean not success when save data
-            }
+            $find->save();
+            return true;
         }
-        return 3; // dont find id in model
+        return false; // dont find id in model
     }
 
     public function getAllCateMenu()

@@ -43,4 +43,13 @@ class Reporitorys implements ReporitoryInterface
             return $this->model->find($id);
         }
     }
+    public function findByField($columns = array('*'), $allow = '=')
+    {
+        $sql = 'select * from '.$this->model.'where';
+        foreach ($columns as $key => $column)
+        {
+            $sql .= ' '.$key.' '. $allow.' '.$column;
+        }
+        echo $sql; die();
+    }
 }

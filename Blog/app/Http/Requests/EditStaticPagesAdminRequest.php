@@ -13,7 +13,7 @@ class EditStaticPagesAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class EditStaticPagesAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'       => 'required',
+            'contentText' => 'required',
+            'status_show' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'title.required'        => 'Nhập tên bài viết',
+            'contentText.required'  => 'Nhập nội dung bài viết',
+            'status_show.required'  => 'Chọn kiểu hiển thị'
         ];
     }
 }

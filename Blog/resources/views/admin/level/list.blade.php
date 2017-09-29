@@ -28,7 +28,7 @@
                         <tbody>
                             <?php $stt = 1;?>
                             @foreach($levels as $level)
-                            <tr class="odd gradeX" align="center">
+                            <tr class="odd gradeX changecolor" align="center" data-status_show="{{ $level->status_show }}">
                                 <td>{{ $stt++ }}</td>
                                 <td>{{ $level->level_name }}</td>
                                 <td>{{ $level->level }}</td>
@@ -57,4 +57,7 @@
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
+@endsection
+@section('javascript')
+    <script src="{{ asset('admin/script/changecolor.js') }}"></script>
 @endsection

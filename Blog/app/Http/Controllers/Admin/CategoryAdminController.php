@@ -57,10 +57,13 @@ class CategoryAdminController extends Controller
 
     public function change($id)
     {
-        $status = $this->cate->changeStatusCate($id);
-        if($status == 1)
+        if($this->cate->changeStatusCate($id))
         {
             return redirect()->route('listcate')->with('log', 'Bạn đã thay đổi thành công');
+        }
+        else
+        {
+            return redirect()->route('listcate')->with('log', 'Bạn đã thay đổi không thành công');
         }
     }
 

@@ -52,7 +52,7 @@
                 <tbody>
                 <?php $stt = 1;?>
                 @foreach($cates as $cate)
-                    <tr class="odd gradeX" align="center">
+                    <tr class="odd gradeX changecolor" align="center" data-status_show="{{ $cate->timeDelete != null ? '0' : '1' }}">
                         <td>{{ $stt++ }}</td>
                         <td>{{ $cate->category_name }}</td>
                         <td>
@@ -85,7 +85,7 @@
                             @endif
                         </td>
                         <td class="center"><i class="fa fa-exchange" aria-hidden="true"></i>
-                            <a href="{{ url('admin/category/change') }}/{{ $cate->id }}">
+                            <a onclick="return confirm('Bạn sẽ thay đổi các con của category này')" href="{{ url('admin/category/change') }}/{{ $cate->id }}">
                                 @if($cate->timeDelete == null)
                                     {{ 'Ẩn' }}
                                 @else
@@ -102,4 +102,8 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('admin/script/changecolor.js') }}"></script>
 @endsection

@@ -55,11 +55,12 @@ Route::middleware(['AuthLogin'])->group(function () {
 
         Route::prefix('staticpages')->group(function () {
             Route::get('list', 'Admin\StaticPagesAdminController@index')->name('liststatic');
-            //Route::get('delete/{id}', 'Admin\StaticPagesAdminController@change');
+            Route::get('delete/{id}', 'Admin\StaticPagesAdminController@delete');
             Route::get('add', 'Admin\StaticPagesAdminController@getAdd');
             Route::post('add', 'Admin\StaticPagesAdminController@postAdd');
-            //Route::get('edit/{id}', 'Admin\LevelAdminController@getEdit');
-            //Route::post('edit/{id}', 'Admin\LevelAdminController@postEdit');
+            Route::get('edit/{id}', 'Admin\StaticPagesAdminController@getEdit');
+            Route::post('edit/{id}', 'Admin\StaticPagesAdminController@postEdit');
+            Route::get('detail/{id}', 'Admin\StaticPagesAdminController@detail');
         });
 
     });

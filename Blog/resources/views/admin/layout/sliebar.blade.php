@@ -64,13 +64,13 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-cube fa-fw"></i> Post<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List Product</a>
+                        <a href="#">List Post</a>
                     </li>
                     <li>
-                        <a href="#">Add Product</a>
+                        <a href="#">Add Post</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

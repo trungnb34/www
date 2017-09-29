@@ -6,6 +6,11 @@
                 <h1 class="page-header">Static Pages
                     <small>List</small>
                 </h1>
+                @if(Session::has('log'))
+                    <div class="alert alert-danger" id="errorLog">
+                        {{ Session::get('log') }}
+                    </div>
+                @endif
             </div>
             <a href="{{ url('admin/staticpages/add') }}" class="btn btn-primary" id="create_new">Thêm mới</a>
             <!-- /.col-lg-12 -->
@@ -33,9 +38,9 @@
                             {{ 'Hiện' }}
                         @endif
                     </td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
-                    <td class="center"><a href="#">Detail</a></td>
+                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return confirm('Bạn có muốn xóa');" href="{{ url('admin/staticpages/delete') }}/{{ $staticPage->id }}"> Delete</a></td>
+                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{ url('admin/staticpages/edit') }}/{{ $staticPage->id }}">Edit</a></td>
+                    <td class="center"><a href="{{ url('admin/staticpages/detail') }}/{{ $staticPage->id }}">Detail</a></td>
                 </tr>
                 @endforeach
                 </tbody>

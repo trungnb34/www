@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginAdminRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class LoginAdminController extends Controller
 {
@@ -30,10 +32,24 @@ class LoginAdminController extends Controller
             'email' => $request->username,
             'password' => $request->password,
         ];
-        if (Auth::attempt($login))
+
+        $users = DB::table('users')->where([
+            ['email', '=', $request->username],
+            ['password', '=', bcrypt($request->password)],
+        ])->get();
+        
+        if($users)
         {
-            // Authentication passed...
-            return redirect()->route('homeadmin');
+            if(Auth::check())
+            {
+                Auth::logout();
+            }
+
+            if (Auth::attempt($login))
+            {
+                // Authentication passed...
+                return redirect()->route('homeadmin');
+            }
         }
         else
         {
