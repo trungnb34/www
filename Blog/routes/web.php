@@ -63,5 +63,23 @@ Route::middleware(['AuthLogin'])->group(function () {
             Route::get('detail/{id}', 'Admin\StaticPagesAdminController@detail');
         });
 
+        Route::prefix('posttypes')->group(function () {
+            Route::get('list', 'Admin\PostTypeAdminController@index')->name('listposttype');
+            Route::get('change/{id}', 'Admin\PostTypeAdminController@change');
+            Route::get('add', 'Admin\PostTypeAdminController@getAdd');
+            Route::post('add', 'Admin\PostTypeAdminController@postAdd');
+            Route::get('edit/{id}', 'Admin\PostTypeAdminController@getEdit');
+            Route::post('edit/{id}', 'Admin\PostTypeAdminController@postEdit');
+            Route::get('detail/{id}', 'Admin\PostTypeAdminController@detail');
+        });
+
+        Route::prefix('feedback')->group(function () {
+            Route::get('list', 'Admin\FeeBackController@index')->name('listfeedback');
+        });
+
     });
+});
+
+Route::get('/', function() {
+    return view('user.home.home');
 });

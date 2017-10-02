@@ -64,6 +64,27 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="#"><i class="fa fa-anchor" aria-hidden="true"></i> Post Types<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('admin/posttypes/list') }}">List Post Types</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/posttypes/add') }}">Add Post Types</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> Feed Back<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ url('admin/feedback/list') }}">List Feed Back</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-cube fa-fw"></i> Post<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

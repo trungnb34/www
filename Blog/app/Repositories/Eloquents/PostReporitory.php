@@ -16,7 +16,15 @@ abstract class PostReporitory extends ConfigModel implements IPostReporitory
         $this->app = $app;
     }
 
-    
+    public function showByCate($cate_id)
+    {
+
+    }
+
+    public function showOnTopList()
+    {
+        // TODO: Implement showOnTopList() method.
+    }
 
     abstract function model();
 }
