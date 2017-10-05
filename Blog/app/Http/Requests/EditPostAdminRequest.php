@@ -13,7 +13,7 @@ class EditPostAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class EditPostAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "title" => 'required',
+            'category_id' => 'required',
+            'post_type_id' => 'required',
+            'contentText'  => 'required',
+            'time_delete'  => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'category_id.required'    => 'Chọn category cho bài viết',
+            'title.required'          => 'Nhập tên title',
+            'post_type_id.required'   => 'Chọn post type cho bài viết',
+            'contentText'             => 'Nhập nội dung bài viết',
+            'time_delete'             => 'Chọn kiểu hiện thị',
         ];
     }
 }

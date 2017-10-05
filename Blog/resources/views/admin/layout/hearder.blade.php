@@ -30,12 +30,12 @@
     <link rel="stylesheet" href="{{ asset('admin/style/css.css') }}">
 
     {{--<link rel="stylesheet" href="{{ asset('admin/dist/css/bootstrap-select.min.css') }}">--}}
+    @yield('css')
 </head>
 
 <body>
 
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -72,5 +72,7 @@
             @include('admin.layout.sliebar')
             <!-- /.navbar-static-side -->
         </nav>
+
         <!-- Page Content -->
         <div id="page-wrapper">
+

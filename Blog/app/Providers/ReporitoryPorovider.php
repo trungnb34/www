@@ -29,6 +29,8 @@ class ReporitoryPorovider extends ServiceProvider
             'App\Repositories\Contracts\ILevelReporitory' => 'App\Repositories\ReporitoryObject\Level',
             'App\Repositories\Contracts\IStaticPageReporitory' => 'App\Repositories\ReporitoryObject\StaticPages',
             'App\Repositories\Contracts\IPostTypeReporitory' => 'App\Repositories\ReporitoryObject\PostType',
+            'App\Repositories\Contracts\IFeedBackReporitory' => 'App\Repositories\ReporitoryObject\FeedBack',
+            'App\Repositories\Contracts\IPostReporitory' => 'App\Repositories\ReporitoryObject\Post'
         ];
 
         foreach($binds as $keys => $value)

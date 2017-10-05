@@ -15,6 +15,8 @@ interface ReporitoryInterface
 
     public function find($id);
 
+    public function findByField($value, $attribute);
+
     //public function changeStatus($id, $attribute = "status_show");
-    public function findByField($columns = array('*'));
+    //public function findByField($columns = array('*'));
 }

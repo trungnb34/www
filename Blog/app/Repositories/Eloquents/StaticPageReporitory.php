@@ -15,5 +15,6 @@ abstract class StaticPageReporitory extends ConfigModel implements IStaticPageRe
         $this->app = $app;
         $this->makeModel();
     }
+
     abstract public function model();
 }

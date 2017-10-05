@@ -1,0 +1,15 @@
+div#showavatar{
+    width: 100%;
+}
+img#show{
+    width: 100%;
+    height: auto;
+}
+/*img.showavatar{*/
+    /*width: 100%;*/
+    /*height: auto;*/
+/*}*/
+td img#showicon{
+    width: 50px;
+    height: auto;
+}

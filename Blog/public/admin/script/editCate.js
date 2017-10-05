@@ -22,4 +22,13 @@ $(document).ready(function() {
             $('#menu_id').attr('disabled', 'disabled');
         }
     })
+    // select option category
+    var category_id = $('#showcategory').val();
+    var optionCates = $('#optionCates').find('option');
+    optionCates.each(function () {
+        if($(this).val() == category_id)
+        {
+            $(this).attr('selected', 'selected');
+        }
+    });
 });

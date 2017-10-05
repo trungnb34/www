@@ -14,7 +14,7 @@
             </div>
             <a href="{{ url('admin/category/add') }}" class="btn btn-primary" id="create_new">Thêm mới</a>
             <div class="form-group">
-                <form action="{{ url('admin/category/filterByMenu') }}" method="GET">
+                <form action="{{ url('admin/category/filterByMenu') }}" method="POST">
                     {{ csrf_field() }}
                     <select name="menu_id" title="Choose one of the following..." class="form-control"  onchange="this.form.submit()">
                         <option value="0">All</option>

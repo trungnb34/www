@@ -88,10 +88,10 @@
                 <a href="#"><i class="fa fa-cube fa-fw"></i> Post<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="#">List Post</a>
+                        <a href="{{ url('admin/post/list') }}">List Post</a>
                     </li>
                     <li>
-                        <a href="#">Add Post</a>
+                        <a href="{{ url('admin/post/add') }}">Add Post</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

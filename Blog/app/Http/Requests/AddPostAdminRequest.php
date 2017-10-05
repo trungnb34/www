@@ -13,7 +13,7 @@ class AddPostAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class AddPostAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|unique:post,title',
+            'category_id' => 'required',
+            'post_type_id' => 'required',
+            'contentText'  => 'required',
+            'time_delete'  => 'required',
+            'avatar'       => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'title.required'          => 'Nhập tên title',
+            'title.unique'            => 'Tên title đã bị trùng',
+            'category_id.required'    => 'Chọn category cho bài viết',
+            'post_type_id.required'   => 'Chọn post type cho bài viết',
+            'contentText'             => 'Nhập nội dung bài viết',
+            'time_delete'             => 'Chọn kiểu hiện thị',
+            'avatar.required'         => 'Chọn ảnh avatar cho bài viết'
         ];
     }
 }

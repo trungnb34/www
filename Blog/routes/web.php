@@ -39,7 +39,7 @@ Route::middleware(['AuthLogin'])->group(function () {
             Route::get('change/{id}', 'Admin\CategoryAdminController@change');
             Route::get('add', 'Admin\CategoryAdminController@getAdd');
             Route::post('add', 'Admin\CategoryAdminController@postAdd');
-            Route::get('filterByMenu', 'Admin\CategoryAdminController@filterByMenu');
+            Route::post('filterByMenu', 'Admin\CategoryAdminController@filterByMenu');
             Route::get('edit/{id}', 'Admin\CategoryAdminController@getEdit');
             Route::post('edit/{id}', 'Admin\CategoryAdminController@postEdit');
         });
@@ -75,6 +75,20 @@ Route::middleware(['AuthLogin'])->group(function () {
 
         Route::prefix('feedback')->group(function () {
             Route::get('list', 'Admin\FeeBackController@index')->name('listfeedback');
+            Route::get('detail/{id}', 'Admin\FeeBackController@detail');
+            Route::get('unread', 'Admin\FeeBackController@unread');
+            Route::get('fightallread', 'Admin\FeeBackController@fightallread');
+            Route::get('delete/{id}', 'Admin\FeeBackController@delete');
+        });
+
+        Route::prefix('post')->group(function () {
+            Route::get('list', 'Admin\PostAdminController@index')->name('listpost');
+            Route::get('add', 'Admin\PostAdminController@getAdd');
+            Route::post('add', 'Admin\PostAdminController@postAdd');
+            Route::get('change/{id}', 'Admin\PostAdminController@change');
+            Route::get('detail/{slug}', 'Admin\PostAdminController@detail');
+            Route::get('edit/{slug}', 'Admin\PostAdminController@getEdit');
+            Route::post('edit/{slug}', 'Admin\PostAdminController@postEdit');
         });
 
     });

@@ -42,14 +42,12 @@ class Reporitorys implements ReporitoryInterface
         {
             return $this->model->find($id);
         }
+        return false;
     }
-    public function findByField($columns = array('*'), $allow = '=')
+
+    public function findByField($value, $attribute)
     {
-        $sql = 'select * from '.$this->model.'where';
-        foreach ($columns as $key => $column)
-        {
-            $sql .= ' '.$key.' '. $allow.' '.$column;
-        }
-        echo $sql; die();
+        // TODO: Implement findByField() method.
+        return $this->model->where($attribute, '=', $value)->get();
     }
 }
