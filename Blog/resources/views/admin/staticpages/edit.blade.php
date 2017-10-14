@@ -35,7 +35,7 @@
                             <label class="radio-inline"><input {{ $findStatic->status_show == 0 ? 'checked' : '' }} type="radio" name="status_show" value="0">Ẩn</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Sửa</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

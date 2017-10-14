@@ -14,7 +14,6 @@
                 <tr align="center">
                     <th>STT</th>
                     <th>Tên menu</th>
-                    <th>Trạng thái</th>
                     <th>Change</th>
                     <th>Edit</th>
                 </tr>
@@ -25,19 +24,12 @@
                     <tr class="odd gradeX changecolor" align="center" data-status_show="{{ $item->status_show }}" >
                         <td>{{ $stt++ }}</td>
                         <td>{{ $item->name_menu }}</td>
-                        <td>
-                            @if($item->status_show == 1)
-                                {{ 'Hiện' }}
-                            @else
-                                {{ 'Ẩn' }}
-                            @endif
-                        </td>
                         <td class="center"><i class="fa fa-exchange" aria-hidden="true"></i>
                             <a href="{{ url('admin/menu/change') }}/{{ $item->id }}">
                                 @if($item->status_show == 1)
-                                    {{ ' Ẩn' }}
+                                    {{ 'Hiện' }}
                                 @else
-                                    {{ ' Hiện' }}
+                                    {{ 'Ẩn' }}
                                 @endif
                             </a>
                         </td>

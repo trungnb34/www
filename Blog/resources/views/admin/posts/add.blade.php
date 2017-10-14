@@ -69,7 +69,7 @@
                             <input name="time_delete" value="0" type="radio">Invisible
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Post Add</button>
+                    <button type="submit" class="btn btn-primary">Post Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

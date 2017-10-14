@@ -38,19 +38,19 @@ class LoginAdminController extends Controller
             ['password', '=', bcrypt($request->password)],
         ])->get();
         
-        if($users)
-        {
-            if(Auth::check())
-            {
-                Auth::logout();
-            }
+        //if($users)
+        //{
+            //if(Auth::check())
+            //{
+                //Auth::logout();
+            //}
 
             if (Auth::attempt($login))
             {
                 // Authentication passed...
                 return redirect()->route('homeadmin');
             }
-        }
+        //}
         else
         {
             return redirect()->route('getlogin')->with('errorLogin', 'Tài khoản hoặc mật khẩu không chính xác');

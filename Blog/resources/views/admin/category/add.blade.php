@@ -39,7 +39,7 @@
                         <label>Category Name</label>
                         <input class="form-control" name="category_name" placeholder="Please Enter Category Name" />
                     </div>
-                    <button type="submit" class="btn btn-default">Category Add</button>
+                    <button type="submit" class="btn btn-primary">Category Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

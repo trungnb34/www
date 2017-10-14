@@ -35,7 +35,7 @@
                             <label class="radio-inline"><input {{ $levelFind->status_show == 0 ? 'checked' : '' }} type="radio" value="0" name="status_show">Ẩn</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Category Edit</button>
+                    <button type="submit" class="btn btn-primary">Category Edit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

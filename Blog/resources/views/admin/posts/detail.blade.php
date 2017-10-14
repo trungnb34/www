@@ -7,6 +7,7 @@
         </div>
         <div class="container-fluid">
             <h1>{{ $post->title }}</h1>
+            <p>{{ $post->created_at }}</p>
         </div>
         <hr>
         <div class="container-fluid">

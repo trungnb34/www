@@ -28,9 +28,10 @@ class PostAdminController extends Controller
 
     public function index()
     {
+        $cates = $this->cates->all();
         $posts = $this->post->getAll();
-        //dd($posts);
-        return view('admin.posts.list', ['posts' => $posts]);
+        $posttypes = $this->posttype->all();
+        return view('admin.posts.list', ['posts' => $posts, 'cates' => $cates, 'posttypes' => $posttypes]);
     }
 
     public function getAdd()
@@ -39,6 +40,7 @@ class PostAdminController extends Controller
         $posttypes = $this->posttype->all();
         return view('admin.posts.add', ['cates' => $cates, 'posttypes' => $posttypes]);
     }
+
     public function postAdd(AddPostAdminRequest $request)
     {
         if($request->time_delete != 1) {
@@ -151,5 +153,12 @@ class PostAdminController extends Controller
             return view('admin.posts.edit', ['posts' => $posts, 'cates' => $cates, 'posttypes' => $posttypes]);
         }
         return redirect()->route('ex404');
+    }
+
+    public function filterByPost()
+    {
+        if ( Session::token() !== Input::get( '_token' ) ) {
+            echo "ok man";
+        }
     }
 }

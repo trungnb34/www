@@ -35,7 +35,7 @@
                             <label class="radio-inline"><input type="radio" value="0" name="status_show">Ẩn</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Level Add</button>
+                    <button type="submit" class="btn btn-primary">Level Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

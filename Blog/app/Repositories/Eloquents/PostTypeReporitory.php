@@ -5,14 +5,8 @@ use App\Repositories\Contracts\IPostTypeReporitory;
 use App\Repositories\ConfigModel;
 use Illuminate\Container\Container as App;
 
-abstract class PostTypeReporitory extends ConfigModel implements IPostTypeReporitory
+class PostTypeReporitory extends ConfigModel implements IPostTypeReporitory
 {
-    public function __construct(App $app)
-    {
-        $this->app = $app;
-        $this->makeModel();
-    }
-
     public function change($id)
     {
         // TODO: Implement change() method.
@@ -25,5 +19,8 @@ abstract class PostTypeReporitory extends ConfigModel implements IPostTypeRepori
         return false;
     }
 
-    abstract function model();
+    public function model()
+    {
+        return \PostType::class;
+    }
 }

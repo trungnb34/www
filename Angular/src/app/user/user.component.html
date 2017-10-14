@@ -1,0 +1,6 @@
+<input type="text" [(ngModel)]="name" #txtUserName>
+<h3 [style.color]="name.length % 2 === 0 ? 'red' : 'black'">Hello : {{ name }}</h3>
+
+<h3 [ngStyle]="currentStyle">Hello : {{ name }} </h3>
+
+<div [class]="isHighLight ? 'circle' : 'square'"></div>

@@ -6,7 +6,7 @@ use App\Repositories\ConfigModel;
 use Illuminate\Container\Container as App;
 use Illuminate\Support\Facades\DB;
 
-abstract class FeedBackReporitory extends ConfigModel implements IFeedBackReporitory
+class FeedBackReporitory extends ConfigModel implements IFeedBackReporitory
 {
     public function __construct(App $app)
     {
@@ -84,5 +84,8 @@ abstract class FeedBackReporitory extends ConfigModel implements IFeedBackRepori
         // TODO: Implement getFeedBackByMouth() method.
     }
 
-    abstract public function model();
+    public function model()
+    {
+        return \FeedBack::class;
+    }
 }

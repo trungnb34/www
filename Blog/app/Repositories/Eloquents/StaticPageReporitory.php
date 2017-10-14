@@ -5,7 +5,7 @@ use App\Repositories\Contracts\IStaticPageReporitory;
 use Illuminate\Container\Container as App;
 use App\Repositories\ConfigModel;
 
-abstract class StaticPageReporitory extends ConfigModel implements IStaticPageReporitory
+class StaticPageReporitory extends ConfigModel implements IStaticPageReporitory
 {
     protected $app;
     protected $model;
@@ -16,5 +16,8 @@ abstract class StaticPageReporitory extends ConfigModel implements IStaticPageRe
         $this->makeModel();
     }
 
-    abstract public function model();
+    public function model()
+    {
+        return \StaticPages::class;
+    }
 }

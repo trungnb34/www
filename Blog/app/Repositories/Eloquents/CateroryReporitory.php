@@ -5,7 +5,7 @@ use App\Repositories\ConfigModel;
 use App\Repositories\Contracts\ICategoryReporitory;
 use Illuminate\Container\Container as App;
 
-abstract class CateroryReporitory extends ConfigModel implements ICategoryReporitory
+class CateroryReporitory extends ConfigModel implements ICategoryReporitory
 {
     public function __construct(App $app)
     {
@@ -69,5 +69,8 @@ abstract class CateroryReporitory extends ConfigModel implements ICategoryRepori
                     ->get();
     }
 
-    abstract function model();
+    public function model()
+    {
+        return \Category::class;
+    }
 }

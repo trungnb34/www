@@ -44,7 +44,6 @@
                     <th>Category Parent</th>
                     <th>Slug</th>
                     <th>Menu ID</th>
-                    <th>Status</th>
                     <th>Change</th>
                     <th>Edit</th>
                 </tr>
@@ -77,19 +76,12 @@
                                 @endif
                             @endforeach
                         </td>
-                        <td>
-                            @if($cate->timeDelete == null)
-                                {{ 'Hiện' }}
-                            @else
-                                {{ 'Ẩn' }}
-                            @endif
-                        </td>
                         <td class="center"><i class="fa fa-exchange" aria-hidden="true"></i>
                             <a onclick="return confirm('Bạn sẽ thay đổi các con của category này')" href="{{ url('admin/category/change') }}/{{ $cate->id }}">
                                 @if($cate->timeDelete == null)
-                                    {{ 'Ẩn' }}
+                                    {{ 'Hiển' }}
                                 @else
-                                    {{ 'Hiện' }}
+                                    {{ 'Ẩn' }}
                                 @endif
                             </a>
                         </td>

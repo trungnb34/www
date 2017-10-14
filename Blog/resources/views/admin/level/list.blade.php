@@ -20,7 +20,6 @@
                                 <th>ID</th>
                                 <th>Name Level</th>
                                 <th>Level</th>
-                                <th>Status</th>
                                 <th>Change</th>
                                 <th>Edit</th>
                             </tr>
@@ -32,19 +31,12 @@
                                 <td>{{ $stt++ }}</td>
                                 <td>{{ $level->level_name }}</td>
                                 <td>{{ $level->level }}</td>
-                                <td>
-                                    @if($level->status_show == 1)
-                                        {{ 'Hiện' }}
-                                    @else
-                                        {{ 'Ẩn' }}
-                                    @endif
-                                </td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i>
                                     <a href="{{ url('admin/level/change') }}/{{ $level->id }}">
                                         @if($level->status_show == 1)
-                                            {{ 'Ẩn' }}
-                                        @else
                                             {{ 'Hiện' }}
+                                        @else
+                                            {{ 'Ẩn' }}
                                         @endif
                                     </a>
                                 </td>

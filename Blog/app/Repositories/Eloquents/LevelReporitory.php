@@ -5,14 +5,8 @@ use App\Repositories\ConfigModel;
 use App\Repositories\Contracts\ILevelReporitory;
 use Illuminate\Container\Container as App;
 
-abstract class LevelReporitory extends ConfigModel implements ILevelReporitory
+class LevelReporitory extends ConfigModel implements ILevelReporitory
 {
-    public function __construct(App $app)
-    {
-        $this->app = $app;
-        $this->makeModel();
-    }
-
     /**
      *
      */
@@ -27,5 +21,8 @@ abstract class LevelReporitory extends ConfigModel implements ILevelReporitory
         return false;
     }
 
-    abstract function model();
+    public function model()
+    {
+        return \Level::class;
+    }
 }

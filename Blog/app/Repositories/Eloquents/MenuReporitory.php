@@ -1,19 +1,14 @@
 <?php
 namespace App\Repositories\Eloquents;
 
+use App\Models\Menu;
 use App\Repositories\ConfigModel;
 use App\Repositories\Contracts\IMenuReporitory;
 use Illuminate\Container\Container as App;
 
 
-abstract class MenuReporitory extends ConfigModel implements IMenuReporitory
+class MenuReporitory extends ConfigModel implements IMenuReporitory
 {
-    public function __construct(App $app)
-    {
-        $this->app = $app;
-        $this->makeModel();
-    }
-
     public function changeStatusMenu($id)
     {
         if($find = $this->model->find($id))
@@ -25,5 +20,7 @@ abstract class MenuReporitory extends ConfigModel implements IMenuReporitory
         return false;
     }
 
-    abstract function model();
+     public function model() {
+         return Menu::class;
+     }
 }

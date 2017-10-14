@@ -1,4 +1,6 @@
 @extends('admin.layout.layout');
 @section('content')
-    <h1>Home for blog</h1>
+    <div class="container-fluid">
+        <h1>Home page</h1>
+    </div>
 @endsection

@@ -40,7 +40,7 @@
                         <label>Category Name</label>
                         <input value="{{ $cateFind->category_name }}" class="form-control" name="category_name" placeholder="Please Enter Category Name" />
                     </div>
-                    <button type="submit" class="btn btn-default">Category Edit</button>
+                    <button type="submit" class="btn btn-primary">Category Edit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

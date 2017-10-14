@@ -70,7 +70,7 @@
                         </label>
                     </div>
                     @endforeach
-                    <button type="submit" class="btn btn-default">Post Edit</button>
+                    <button type="submit" class="btn btn-primary">Post Edit</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                     <form>
             </div>

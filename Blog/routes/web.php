@@ -89,8 +89,14 @@ Route::middleware(['AuthLogin'])->group(function () {
             Route::get('detail/{slug}', 'Admin\PostAdminController@detail');
             Route::get('edit/{slug}', 'Admin\PostAdminController@getEdit');
             Route::post('edit/{slug}', 'Admin\PostAdminController@postEdit');
+            Route::post('filterByPost', 'Admin\PostAdminController@filterByPost');
         });
 
+        Route::prefix('user')->group(function () {
+            Route::get('list', 'Admin\UserAdminController@index')->name('listuser');
+            Route::get('change/{id}', 'Admin\UserAdminController@change');
+            Route::get('detail/{id}', 'Admin\UserAdminController@detail');
+        });
     });
 });
 
